@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Game {
-	final static String faces = "AKQJT98765432";
-    final static String suits = "HDSC";
+	static String faces = Constants.FACES;
+    static String suits = Constants.SUITS;
 	void startGame() {
 		Scanner scanner = new Scanner(System.in);
 		String[] input = new String[5];

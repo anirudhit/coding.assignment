@@ -1,8 +1,8 @@
 package com.poker;
 
 public class Deck {
-	final static String faces = "AKQJT98765432";
-    final static String suits = "HDSC";
+    static String faces = Constants.FACES;
+    static String suits = Constants.SUITS;
     final static String[] deck = new String[faces.length() * suits.length()];
     
     void buildDeck() {

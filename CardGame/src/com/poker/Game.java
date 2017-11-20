@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Game {
 	static String faces = Constants.FACES;
     static String suits = Constants.SUITS;
+    private static Deck deck = new Deck();
 	void startGame() {
 		Scanner scanner = new Scanner(System.in);
 		String[] input = new String[5];
@@ -14,15 +15,12 @@ public class Game {
 		System.out.println("Enter the cards:");
 		for (int i = 0; i < input.length; i++) {
 			inpString = scanner.next();
-			if(inpString.length() == 2) {
-				input[i] = inpString;
-			}else {
-				input[i] = "T"+inpString.charAt(2);
-			}
+			input[i] = deck.checkCard(inpString);
         }
 		System.out.println(analyzeHand(input));
 	}
 	
+	//Using encapsulation
 	private static Score analyzeHand(final String[] hand) {
         if (hand.length != 5)
             return new Score("Wrong number of cards", -1, hand);
